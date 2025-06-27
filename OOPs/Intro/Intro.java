@@ -46,7 +46,10 @@ public class Intro {
 
         System.out.println(two.name);
 
+        
+
     }
+    
 }
 // create a class
 // for every single student
@@ -67,6 +70,8 @@ class Student {
     void changeName(String name) {
         this.name = name;
     }
+
+    
 
     Student  (Student other) {
         this.name = other.name;
