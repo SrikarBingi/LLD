@@ -1,4 +1,4 @@
-package Polymorphism;
+package AbstractClasses;
 
 public class Student extends User {
     String batch;

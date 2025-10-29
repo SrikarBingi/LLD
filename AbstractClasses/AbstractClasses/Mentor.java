@@ -1,4 +1,4 @@
-package Polymorphism;
+package AbstractClasses;
 
 public class Mentor extends User{
 
