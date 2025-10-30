@@ -27,6 +27,7 @@ public class Intro {
 
 //        srikar.changeName("Shoe lover");
 //        srikar.greeting();
+        // srikar. welcome();
 
 //
         System.out.println(srikar.rno);
