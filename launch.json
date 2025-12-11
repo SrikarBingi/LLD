@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run TestNaive",
+      "request": "launch",
+      "mainClass": "SOLID.TestNaive",
+      "classPaths": ["LLD/SOLID"],
+      "modulePaths": []
+    }
+  ]
+}

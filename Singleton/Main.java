@@ -6,5 +6,6 @@ public class Main {
         Database db2 = Database.getInstance();
 
         RandomClass randomClass = new RandomClass();
+        RandomClass randomClass2 = new RandomClass();
     }
 }
