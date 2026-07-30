@@ -5,7 +5,10 @@ public class Main {
         Database db1 = Database.getInstance();
         Database db2 = Database.getInstance();
 
-        RandomClass randomClass = new RandomClass();
-        RandomClass randomClass2 = new RandomClass();
+        System.out.println(db1);
+        System.out.println(db2);
+
+        // RandomClass randomClass = new RandomClass();
+        // RandomClass randomClass2 = new RandomClass();
     }
 }

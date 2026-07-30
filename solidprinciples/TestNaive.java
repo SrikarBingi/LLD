@@ -21,6 +21,10 @@ public class TestNaive {
     }
 }
 
+// ============================================
+// STEP 1: Naive Approach
+// ============================================
+
 /*
 PROBLEMS with Naive Approach:
 1. If-else chains 
@@ -34,7 +38,9 @@ we have to apply solid principles to overcome these
 */
 
 
-// SRP
+// ============================================
+// STEP 2: SRP — Single Responsibility Principle
+// ============================================
 
 /*
 SRP Definition:
@@ -70,6 +76,10 @@ Still Problems:
 Next Step: Apply OCP (Open/Closed Principle)
 
 We will solve these problems using OCP.
+
+// ============================================
+// STEP 3: OCP — Open Closed Principle
+// ============================================
 
 OCP Definition:
 
@@ -132,6 +142,77 @@ Problem in the Previous Design:
 We have a Bird_OCP base class, but it does NOT contain fly() behavior.
 So a Bird_OCP reference cannot guarantee flying behavior.
 
+// ============================================
+// STEP 5: ISP — Interface Seggregation Principle
+// ============================================
+
 Solution:
 Create proper abstractions that correctly represent the parent–child relationship.
 */
+
+/*
+IMPROVEMENTS after applying ISP:
+1. Separate, focused interfaces — no unnecessary methods
+2. Birds only implement abilities they actually use (Flyable, Swimmable, etc.)
+3. No empty or “not supported” method implementations
+4. Better flexibility for adding new abilities (run, walk, dive, etc.)
+5. Cleaner, more maintainable architecture
+
+Remaining PROBLEMS:
+1. Still some duplicated flying logic in Crow and Sparrow
+2. Behavior reuse is required — inheritance is not ideal for behavior changes
+3. If flying style changes (fast fly, slow fly, zigzag fly), code modification required again
+
+Next: Apply **DIP — Dependency Inversion Principle** to fix behavior duplication using composition (Strategy Pattern)
+*/
+
+// ============================================
+// STEP 6: DIP — Dependency Inversion Principle
+// ============================================
+
+/*
+DIP Definition:
+"High-level modules should not depend on low-level modules. Both should depend on abstractions."
+"In other words, classes should depend on interfaces/abstractions, not concrete implementations."
+
+When should you apply DIP?
+- When there is a direct dependency on concrete classes
+- When you want to change behavior at runtime
+- When you need better code reusability
+- When you want to use mock objects for testing
+- When behavior variations are causing duplication across classes
+
+Our Problem:
+Crow and Sparrow share the **same flying behavior**.
+In the current design, the flying logic is duplicated in both classes.
+
+Solution:
+Use the **Strategy Pattern** to inject the flying behavior via an abstraction.
+This removes duplication and allows behavior changes at runtime.
+*/
+
+/* 
+FINAL IMPROVEMENTS after applying DIP:
+
+1. Crow and Sparrow both use the same StandardFlyBehavior — NO duplication!
+Common logic is reused instead of rewriting it in each class.
+
+2. Behaviors can be changed at runtime.
+You can switch a bird’s flying behavior dynamically without modifying any class.
+
+3. New behaviors can be added easily (Open/Closed Principle).
+You can add new types of fly behaviors without touching existing bird classes.
+
+4. Testing becomes easy — mock behaviors can be injected.
+You can pass a mock implementation of FlyBehavior to unit tests.
+
+5. Highly reusable — FlyBehavior can be used anywhere.
+Any class can plug in and use the fly behavior; it is not restricted to birds.
+
+6. Loose coupling — Bird_DIP does NOT depend on concrete implementations.
+Bird classes depend only on the abstraction (FlyBehavior), not real classes.
+
+7. All SOLID principles are satisfied!
+SRP OCP, LSP, ISP, and DIP are correctly applied.
+*/
+
