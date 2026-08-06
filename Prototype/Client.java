@@ -1,15 +1,38 @@
 package Prototype;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     public static void main(String[] args) {
         
-        Bird sparrow = new Sparrow();
-        Bird clone = sparrow.cloneBird();
+         BirdRegistery registry = new BirdRegistery();
 
-        clone.setColor("White");
+        List<Bird> birds = new ArrayList<>();
 
-        System.out.println("Original : " + sparrow);
-        System.out.println("Clone    : " + clone);
+        birds.add(new Sparrow());
+        birds.add(new Sparrow());
+        birds.add(new Peacock());
+
+        List<Bird> birdsClone = new ArrayList<>();
+
+        for(Bird b: birds){
+            birdsClone.add(b.cloneBird());
+        }
+
+        birdsClone.get(0).setColor("White");
+
+        System.out.println("Original Birds");
+        for (Bird bird : birds) {
+            System.out.println(bird);
+        }
+
+        System.out.println();
+
+        System.out.println("Cloned Birds");
+        for (Bird bird : birdsClone) {
+            System.out.println(bird);
+        }
         
     }
 }
