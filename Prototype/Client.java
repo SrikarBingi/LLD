@@ -19,6 +19,7 @@ public class Client {
         for(Bird b: birds){
             birdsClone.add(b.cloneBird());
         }
+        //set bird copy
 
         birdsClone.get(0).setColor("White");
 
