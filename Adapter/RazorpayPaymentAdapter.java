@@ -1,5 +1,7 @@
 package Adapter;
 
+import Adapter.Razorpay.RazorpayPayment;
+
 public class RazorpayPaymentAdapter implements PaymentProcessor{
 
     RazorpayPayment razorpayPayment;

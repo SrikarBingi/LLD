@@ -1,4 +1,4 @@
-package Adapter;
+package Adapter.Razorpay;
 
 public class RazorpayPayment {
     public void makePayment(double amount) {
