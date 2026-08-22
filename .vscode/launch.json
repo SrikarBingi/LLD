@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LmsschemadesignApplication",
+      "request": "launch",
+      "mainClass": "com.example.lmsschemadesign.LmsschemadesignApplication",
+      "projectName": "lmsschemadesign"
+    },
+    {
+      "type": "java",
       "name": "Client",
       "request": "launch",
       "mainClass": "FactoryMethod.Client",
